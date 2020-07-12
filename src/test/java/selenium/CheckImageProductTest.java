@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 
-public class CheckImageBanner extends Base {
+public class CheckImageProductTest extends Base {
 	private WebDriver driver;
 	private String baseUrl;
 	HomePage homepage;  
@@ -25,13 +25,13 @@ public class CheckImageBanner extends Base {
 
 	
   @Test
-  public void f() {
+  public void f() throws InterruptedException {
 	  	homepage = new HomePage(driver);
-	  	homepage.GetPage();		
-		assertion.checkElementPresent(driver,"xpath",homepage.bannerTopXpath);
-		
-		
-
+	  	assertion = new Assertion(driver);
+	  	homepage.GetPage();
+		homepage.ProductImageElement("1").click();
+		homepage.switchToImage();		
+		assertion.checkElementPresent(homepage.productImageQuickView);
 	  
   }
   @BeforeTest
