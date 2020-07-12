@@ -10,30 +10,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class Assertion {
-	public static WebElement element = null;
-	
-	
-	public static void checkElementPresent(WebDriver driver, String type, String locator) {
+	private WebDriver driver;
+	public WebElement element = null;
+
+	public Assertion(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public void checkElementPresent(By locator) {
 		WebElement isPresent = null;
-		
+
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-	
-		if(type.equals("id")) {
-			System.out.println("Element found with id: " + locator);
-			isPresent = wait.until(
-					ExpectedConditions.presenceOfElementLocated(By.id(locator)));
-			
-			
-			
-		}else if(type.equals("xpath")) {
-			System.out.println("Element found with xpath: " + locator);
-			isPresent = wait.until(
-					ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
-		}
-		 
-		 Assert.assertEquals(true, isPresent.isDisplayed());
-	
-		
-	} 
+
+		System.out.println("Element found with id: " + locator);
+		isPresent = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
+		Assert.assertEquals(true, isPresent.isDisplayed());
+
+	}
 
 }
