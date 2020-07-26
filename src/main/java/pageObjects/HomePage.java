@@ -37,12 +37,12 @@ public class HomePage {
 		scroll.ScrollIntoElement(mainProductImage);
 	}
 
-	public WebElement MainProductImageElement() {
+	public WebElement GetMainProductImageElement() {
 		WebElement element = driver.findElement(mainProductImage);
 		return element;
 	}
 
-	public WebElement ProductImageElement(String index) {
+	public WebElement GetSingleProductImage(String index) {
 		WebDriverWait wait = new WebDriverWait(driver, 3);
 		WebElement ProductImage = wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath("(//*[@class='product_img_link'])[" + index + "]")));

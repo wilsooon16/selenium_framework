@@ -10,27 +10,21 @@ import org.testng.annotations.Test;
 
 import helper.Assertion;
 import helper.Base;
+import pageObjects.CategoryPage;
 import pageObjects.HomePage;
 import pageObjects.ProductDetailPage;
 
-public class CheckProductDetailTest extends Base {
+public class CheckProductCategoryTest extends Base {
 	private WebDriver driver;
 	private String baseUrl;
-	HomePage homepage;
-	ProductDetailPage pdp;
+	CategoryPage category;
 	Assertion assertion;
 
 	@Test
 	public void f() throws InterruptedException {
-		homepage = new HomePage(driver);
-		
-		homepage.GetPage();
-		homepage.GetMainProductImageElement().click();		
-		pdp = new ProductDetailPage(driver);
-		pdp.assertElementPDP();
-		
-
-
+		category = new CategoryPage(driver);
+		category.GetPage();
+		category.assertCategoryPage();
 	}
 
 	@BeforeTest

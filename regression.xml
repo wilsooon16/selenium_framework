@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel TestSuite" parallel="tests" thread-count="2">
+	<test name="Chrome Test 1">
+		<classes>
+			<class name="selenium.CheckProductDetailTest"></class>
+			<class name="selenium.CheckImageBannerTest"></class>
+			<class name="selenium.CheckProductCategoryTest"></class>
+			<class name="selenium.CheckImageProductTest"></class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

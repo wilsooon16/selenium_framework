@@ -1,6 +1,7 @@
 package selenium;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import helper.Assertion;
 import helper.Base;
@@ -29,7 +30,7 @@ public class CheckImageProductTest extends Base {
 	  	homepage = new HomePage(driver);
 	  	assertion = new Assertion(driver);
 	  	homepage.GetPage();
-		homepage.ProductImageElement("1").click();
+		homepage.GetSingleProductImage("1").click();
 		homepage.switchToImage();		
 		assertion.checkElementPresent(homepage.productImageQuickView);
 	  
