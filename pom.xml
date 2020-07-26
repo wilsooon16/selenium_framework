@@ -50,7 +50,7 @@
 
 	<profiles>
 		<profile>
-			<id>SanityTest</id>
+			<id>Sanity</id>
 			<build>
 				<plugins>
 					<plugin>
