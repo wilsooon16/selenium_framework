@@ -8,7 +8,8 @@ This is a sample project to show how to do UI Automation with Page Object Model 
 Prerequisites:
 1. Java (min v.8.0)
 2. Maven
-2. Chrome browser (84.0)
+3. Chrome browser (87.0)
+4. BrowserDriver (we attach chromedriver for mac in this Repo at src folder)
 
 Dependency Java Maven:
 1. TestNG
